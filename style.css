@@ -1080,6 +1080,9 @@ main {
 	.navbar {
 		padding: 0;
 	}
+    main {
+        padding: 0;
+    }
     /*.nav-content {
         flex-direction: column;
         gap: 1rem;
