@@ -1077,7 +1077,9 @@ main {
 }
 
 @media (max-width: 480px) {
-	padding: 2rem;
+	.navbar {
+		padding: 2rem;
+	}
     /*.nav-content {
         flex-direction: column;
         gap: 1rem;
