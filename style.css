@@ -672,7 +672,7 @@ main {
 .about-hero {
 	font-family: var(--heading-font-font-family);
     min-height: 100vh;
-    background-image: url('img/aboutbg.png');
+    background-image: url('img/aboutbg.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
