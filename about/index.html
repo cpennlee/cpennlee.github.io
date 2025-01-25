@@ -5,16 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Jane Huang</title>
     <link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&amp;family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family=Roboto:ital,wght@0,200;0,300;0,400;0,700;1,300;1,400;1,700">
+	<style>
+		@media (max-width: 768px) {
+		    .nav-menu {
+		        background-color: rgba(0, 0, 0, 0.98);
+		    }
+			.menu-icon {
+			    background-color: #fff;
+			}
+			.menu-icon::before,
+			.menu-icon::after {
+			    background-color: #fff;
+			}
+		}
+	</style>
 </head>
 <body>
     <nav class="navbar navbar-about">
         <div class="nav-content">
             <a href="../" class="logo">Jane Huang</a>
-            <div class="nav-links">
-                <a href="../" class="nav-link">Work</a>
-                <a href="" class="nav-link active">About</a>
-                <a href="../contact/" class="nav-link">Contact</a>
-            </div>
+			
+			<!-- Mobile menu button -->
+			<button class="mobile-menu-btn" aria-label="Toggle menu">
+				<span class="menu-icon"></span>
+			</button>
+			
+			<!-- Navigation links -->
+			<div class="nav-menu">
+	            <div class="nav-links">
+	                <a href="../" class="nav-link">Work</a>
+	                <a href="" class="nav-link active">About</a>
+	                <a href="../contact/" class="nav-link">Contact</a>
+	            </div>
+			</div>
         </div>
     </nav>
 
@@ -23,10 +47,10 @@
 	            <div class="about-text">
 	                <p>I am a true Product Designer with expertise in end-to-end design, from concept to optimization. I combine deep understanding, collaboration, and a touch of creative magic to drive innovation, enhance user satisfaction, and improve key metrics. Passionate about creating high-impact products, I thrive on fostering collaboration and delivering meaningful, world-changing experiences.</p>
 	                <div class="social-links">
-	                    <a href="https://linkedin.com" class="social-link">
+	                    <a href="https://www.linkedin.com/in/jie-huang-7a5aa6a7" class="social-link" target="_blank">
 	                        <img src="../img/about-in.png" alt="LinkedIn" class="social-icon">
 	                    </a>
-	                    <a href="mailto:contact@example.com" class="social-link">
+	                    <a href="mailto:jiehuang.zero@gmail.com" class="social-link">
 	                        <img src="../img/about-em.png" alt="Email" class="social-icon">
 	                    </a>
 	                </div>
@@ -273,7 +297,7 @@
 					    	<h4>Winner</h4>
 					    </div>
 				        <ul class="project-achievements">
-				        	<li> First Prize in Meta's Hobbies and Skill Building Track at the Berlin XRCC Hackathon (2024) <a href="https://www.youtube.com/watch?v=Xb5Y_LYLLac" target="_blank">Link</a></li>
+				        	<li> First Prize in Meta's Hobbies and Skill Building Track at the Berlin XRCC Hackathon (2024). <a href="https://www.youtube.com/watch?v=Xb5Y_LYLLac" target="_blank">Link</a></li>
 				        </ul>
 					</div>
 					
@@ -282,7 +306,7 @@
 					    	<h4>Winner</h4>
 					    </div>
 				        <ul class="project-achievements">
-				        	<li>First Prize in 'Digital Heritage 2024' for an immersive exhibition of the Great Bao’en Temple.</li>
+				        	<li>First Prize in 'Digital Heritage 2024' for an immersive exhibition of the Great Bao’en Temple. <a href="https://www.youtube.com/watch?v=gDqW4Bh3KK4" target="_blank">Link</a></li>
 				        </ul>
 					</div>
 					
@@ -291,7 +315,7 @@
 					    	<h4>Winner</h4>
 					    </div>
 				        <ul class="project-achievements">
-				        	<li>First Prize in 'Owner of Creation Art and Design Competition' (2014).</li>
+				        	<li>First Prize in 'Owner of Creation Art and Design Competition' (2014). </li>
 				        </ul>
 					</div>
 			    </div>

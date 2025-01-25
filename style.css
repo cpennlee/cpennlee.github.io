@@ -2,6 +2,22 @@
 :root {
     --primary-color: #000000;
     --text-color: #000000;
+	--base-font-size: 14px;
+	--heading-font-font-family: Merriweather;
+	--heading-font-font-weight: 400;
+	--body-font-font-family: Roboto;
+	--body-font-font-weight: 400;
+	--meta-font-font-family: Poppins;
+	--meta-font-font-weight: 300;
+	--site-title-font-font-size: 1.4rem;
+	--heading-1-size: 6.5rem;
+	--heading-2-size: 3.2rem;
+	--heading-3-size: 2.1rem;
+	--heading-4-size: 1.6rem;
+	--large-text-size: 1.8rem;
+	--normal-text-size: 1rem;
+	--small-text-size: 0.8rem;
+	--normal-meta-size: 1.1rem;
     --background-color: #ffffff;
     --transition: all 0.3s ease;
 }
@@ -13,7 +29,7 @@
 }
 
 body {
-    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: var(--body-font-font-family);
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -24,7 +40,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--background-color);
     z-index: 1000;
     padding: 2.5rem 3.5rem;
 	transition: transform 0.3s ease;
@@ -34,12 +50,16 @@ body {
 	background-color: rgba(255, 255, 255, 0);
 }
 
+.navbar-project {
+	background-color: #fff;
+}
+
 .navbar.nav-hidden {
     transform: translateY(-100%);
 }
 
 .nav-content {
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -47,30 +67,31 @@ body {
 }
 
 .logo {
-	font-family: Roboto;
-    font-size: 1.5rem;
+	font-family: var(--meta-font-font-family);
+    font-size: var(--site-title-font-font-size);
     text-decoration: none;
     color: var(--text-color);
+	font-weight: 300;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .nav-link {
-	font-family: Roboto;
+	font-family: var(--body-font-font-family);
     text-decoration: none;
     color: var(--text-color);
 	font-size: 1rem;
     transition: var(--transition);
+	font-weight: 300;
 }
 
 .nav-link:hover,
 .nav-link.active {
     text-decoration: underline;
 	text-underline-offset: 0.5rem;
-	font-weight: 600;
 }
 
 .navbar-about .nav-link,
@@ -78,6 +99,129 @@ body {
 .navbar-about .nav-link:hover,
 .navbar-about .nav-link.active {
 	color: #fff;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.75rem;
+    margin: -0.75rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon::before {
+    top: -8px;
+}
+
+.menu-icon::after {
+    bottom: -8px;
+}
+
+/* Menu open state */
+.menu-open .menu-icon {
+    background-color: transparent;
+}
+
+.menu-open .menu-icon::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-open .menu-icon::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Navigation menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .menu-open .nav-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .nav-link {
+		font-family: var(--body-font-font-family);
+        font-size: 3rem;
+        font-weight: 200;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .menu-open .nav-link {
+        opacity: 1;
+        transform: translateY(0);
+    }
+	
+	.nav-link:hover,
+	.nav-link.active {
+	    text-decoration: underline;
+		text-underline-offset: 1rem;
+		text-decoration-thickness: 2px;
+	}
+
+    .menu-open .nav-link:nth-child(1) { transition-delay: 0.1s; }
+    .menu-open .nav-link:nth-child(2) { transition-delay: 0.2s; }
+    .menu-open .nav-link:nth-child(3) { transition-delay: 0.3s; }
 }
 
 
@@ -103,24 +247,24 @@ main {
 }
 
 .hero-content h1 {
-	font-family:Times;
-    font-size: 6.5rem;
-    line-height: 1.4;
+	font-family: var(--heading-font-font-family);
+    font-size: var(--heading-1-size);
+    line-height: 1.6;
     margin-bottom: 2rem;
     font-weight: 400;
 }
 
 .hero-content p {
-	font-family: Roboto;
+	font-family: var(--body-font-font-family);
     font-size: 2.4rem;
 	line-height: 1.6;
     margin-bottom: 6rem;
-	font-weight: 400;
+	font-weight: 300;
 }
 
 .clients p {
-	font-family: Roboto;
-	font-size: 1.5rem;
+	font-family: var(--body-font-font-family);
+	font-size: 1.6rem;
     margin-bottom: 3rem;
 }
 
@@ -154,7 +298,6 @@ main {
 
 .project {
     position: relative;
-    /*aspect-ratio: 16/9;*/
     overflow: hidden;
 }
 
@@ -188,23 +331,201 @@ main {
 .project-logos {
     color: white;
     text-align: left;
-	margin: 3rem 4rem;
+	margin: 2.5rem 3.5rem;
 }
 
 .project-logos h1 {
+	font-family: var(--body-font-font-family)
     display: block;
-    font-size: 3rem;
-	font-weight: 400;
+    font-size: 2.5rem;
+	font-weight: 300;
 }
 
 .project-logos span {
+	font-family: var(--body-font-font-family)
     display: block;
+	font-weight: 200;
     font-size: 1.5rem;
     margin: 0.5rem 0;
 }
 
+/* Project Page */
+.work-detail {
+    max-width: 100%;
+    margin: 100px auto 0;
+}
+
+.work-detail img {
+	width: 100%;
+	display: block;
+}
+
+.container-wrap {
+	background-color: #34394B;
+	padding-bottom: 8rem;
+}
+
+.container {
+	font-family: var(--body-font-font-family);
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 2rem;
+	
+}
+
+.container h1 {
+    font-size: 2rem;
+    text-align: center;
+	color: #fff;
+	padding-top: 3rem;
+    margin-bottom: 5rem;
+    font-weight: 300;
+}
+
+.projects-container {
+    position: relative;
+}
+
+.projects-wrapper {
+    overflow: hidden;
+	
+}
+
+.projects {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.5s ease;
+}
+
+.project-card {
+    flex: 0 0 300px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 4/3;
+}
+
+.card-overlay {
+	width: 100%;
+	height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	background: rgba(0, 0, 0, 1);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 1.5rem;
+    color: white;
+}
+
+.project-card:hover .card-overlay {
+    opacity: 0.2;
+}
+
+.project-card:hover img {
+	transform: scale(1.1);
+	overflow: hidden;
+	transition: var(--transition);
+}
+
+.project-title {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: opacity 0.3s;
+}
+
+.nav-button:hover {
+    background-color: white;
+}
+
+.nav-button.prev {
+    left: 0;
+}
+
+.nav-button.next {
+    right: 0;
+}
+
+.nav-button.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        flex: 0 0 calc(100vw - 4rem);
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+}
+
 
 /* Contact Page */
+.contact {
+	min-height: calc(100vh - 120px);
+}
+
+.contact-item {
+	max-width: 1280px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 45%;
+	gap: 3.5rem;
+	margin: 0 auto;
+	padding: 0 3.5rem;
+}
+
+.contact-project-item {
+	padding-top: 3rem;
+}
+
+.contact-info h1 {
+	font-family: var(--heading-font-font-family);
+	font-size: 6.5rem;
+	line-height: 1.4;
+	margin-bottom: 2rem;
+}
+
+.contact-info p {
+	font-family: var(--body-font-font-family);
+	font-size: 1rem;
+	line-height: 1.6;
+	margin-bottom: 4rem;
+}
+
 .contact-content {
     max-width: 800px;
     margin: 0 auto;
@@ -223,9 +544,7 @@ main {
 }
 
 .contact-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
+
 }
 
 .contact-form {
@@ -236,18 +555,20 @@ main {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .form-group label {
-    font-size: 0.875rem;
+	font-family: var(--body-font-font-family);
+    font-size: 1.5rem;
+	font-weight: 300;
 }
 
 .form-group input,
 .form-group textarea {
-    padding: 0.5rem 0;
+    padding: 1rem;
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #666;
     font-size: 1rem;
     background: transparent;
 }
@@ -258,8 +579,9 @@ main {
 }
 
 .submit-button {
+	font-size: 1.5rem;
     padding: 0.75rem 2rem;
-    border: 1px solid #000;
+    border: 4px solid #000;
     background: transparent;
     border-radius: 2rem;
     cursor: pointer;
@@ -274,7 +596,7 @@ main {
 
 /* Footer */
 .footer {
-	font-family: Roboto;
+	font-family: var(--body-font-font-family);
     padding: 2.5rem 3.5rem;
 	background: #34394B;
 	color: #fff;
@@ -292,8 +614,19 @@ main {
     gap: 1rem;
 }
 
+.social-links img:hover {
+	opacity: 0.8;
+	transition: opacity 0.3s ease;
+}
+
+
+.footer-content p {
+	font-size: 1rem;
+	font-weight: 300;
+}
+
 .social-link {
-	height: 3rem;
+	height: 2.5rem;
     color: var(--text-color);
     text-decoration: none;
     transition: var(--transition);
@@ -307,13 +640,37 @@ main {
     text-decoration: underline;
 }
 
+.footer-project {
+	background: #fff;
+	color: #000;
+}
+
+.social-links-contact {
+	display: flex;
+	gap: 1rem;
+}
+
+.social-link-contact {
+	height: 2.5rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-link-contact img {
+	height:100%;
+}
+
+.social-link-contact img:hover {
+	opacity: 0.6;
+	transition: opacity 0.3s ease;
+}
 
 
 
 /* About Page */
 
 .about-hero {
-	font-family: Times;
+	font-family: var(--heading-font-font-family);
     min-height: 100vh;
     background-image: url('img/aboutbg.png');
     background-size: cover;
@@ -344,10 +701,11 @@ main {
 }
 
 .about-text {
-    max-width: 1000px;
+    max-width: 900px;
     color: white;
-    font-size: 2.5rem;
-    line-height: 1.6;
+    font-size: 2rem;
+    line-height: 2;
+	font-weight: 200;
 	padding: 0 2rem;
 }
 
@@ -368,7 +726,7 @@ main {
 }
 
 .social-icon:hover {
-    opacity: 1;
+    opacity: 0.6;
 }
 
 
@@ -377,8 +735,8 @@ main {
 }
 
 .professional-experience h2 {
-    font-family: Times;
-    font-size: 3rem;
+    font-family: var(--heading-font-font-family);
+    font-size: 2.5rem;
     color: #fff;
     text-align: center;
 	padding: 3rem;
@@ -407,11 +765,12 @@ main {
     grid-template-columns: 35% 1fr;
     gap: 0px;
 	margin: 0 auto;
+	padding: 0 2rem;
 }
 
 .company-info h3 {
-	font-family: Times;
-    font-size: 3rem;
+	font-family: var(--heading-font-font-family);
+    font-size: 2.5rem;
     font-weight: 200;
     margin-bottom: 2rem;
 }
@@ -460,7 +819,7 @@ main {
 
 .project-header h4,
 .project-header-d h4 {
-	font-family: Times;
+	font-family: var(--heading-font-font-family);
     font-size: 2.5rem;
     font-weight: 200;
 	color: #000;
@@ -468,7 +827,7 @@ main {
 
 .project-header p,
 .project-header-d p {
-	font-family: Roboto;
+	font-family: var(--body-font-font-family);
 	line-height: 1.6;
 	color: #000;
 }
@@ -479,7 +838,7 @@ main {
 }
 
 .project-achievements li {
-	font-family: Roboto;
+	font-family: var(--body-font-font-family);
     position: relative;
     padding-left: 24px;
     margin-bottom: 12px;
@@ -507,7 +866,21 @@ main {
 
 
 
+.youtube-wrap {
+	position: relative;
+	width:73%;
+	margin: 0 auto;
+	height:0;
+	padding-bottom: 41.06%;
+}
 
+.youtube-wrap .youtube-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 
 
 
@@ -554,18 +927,17 @@ main {
     }
 }
 
-
-@media (max-width: 1920px) {
+@media (max-width: 2220px) {
 	.hero-content h1 {
 	    font-size: 5.5rem;
 	}
 	.hero-content p {
-	    font-size: 1.4rem;
+	    font-size: 2rem;
 		margin-bottom: 4rem;
 	}
 
 	.clients p {
-		font-size: 1rem;
+		font-size: 1.2rem;
 	    margin-bottom: 1.5rem;
 	}
 	.project-logos h1 {
@@ -573,20 +945,71 @@ main {
 	}
 
 	.project-logos span {
-	    font-size: 1.25rem;
+	    font-size: 1.2rem;
 	}
-	.about-text {
-	    max-width: 800px;
-	    font-size: 2rem;
+	.about-content {
+	    max-width: 1600px;
+	}
+	.experience-item {
+		max-width: 1600px;
 	}
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1885px) {
+	.hero-content h1 {
+	    font-size: 5rem;
+	}
+	.hero-content p {
+	    font-size: 1.8rem;
+		margin-bottom: 4rem;
+	}
+
+	.clients p {
+		font-size: 1rem;
+	    margin-bottom: 1.5rem;
+	}
+	.about-content {
+	    max-width: 1500px;
+	}
+	.experience-item {
+		max-width: 1500px;
+	}
+
+}
+
+@media (max-width: 1716px) {
+	.hero-content h1 {
+	    font-size: 4.5rem;
+	}
+	.hero-content p {
+	    font-size: 1.6rem;
+		margin-bottom: 4rem;
+	}
+
+	.clients p {
+		font-size: 1rem;
+	    margin-bottom: 1.5rem;
+	}
+	.about-text {
+	    max-width: 800px;
+	    font-size: 1.8rem;
+		line-height: 1.6;
+	}
+	.about-content {
+	    max-width: 1400px;
+	}
+	.experience-item {
+		max-width: 1400px;
+	}
+}
+
+@media (max-width: 1550px) {
 	.hero-content h1 {
 	    font-size: 4rem;
 	}
 	.hero-content p {
 	    font-size: 1.4rem;
+		margin-bottom: 4rem;
 	}
 
 	.clients p {
@@ -600,9 +1023,28 @@ main {
 	.project-logos span {
 	    font-size: 1rem;
 	}
+	.about-content {
+	    max-width: 1300px;
+	}
+	.experience-item {
+		max-width: 1300px;
+	}
+	
 }
 
 @media (max-width: 768px) {
+	.hero-content h1 {
+	    font-size: 4rem;
+	}
+	.hero-content p {
+	    font-size: 1.4rem;
+		margin-bottom: 4rem;
+	}
+
+	.clients p {
+		font-size: 1rem;
+	    margin-bottom: 1.5rem;
+	}
 	.hero {
 		padding: 0;
 	}
@@ -619,5 +1061,27 @@ main {
 	.clients p {
 		font-size: 1rem;
 	    margin-bottom: 1.5rem;
+	}
+	.about-text {
+	    max-width: 800px;
+	    font-size: 1.6rem;
+		line-height: 1.6;
+	}
+	
+	.contact-info h1 {
+		font-family: var(--heading-font-font-family);
+		font-size: 5.5rem;
+		line-height: 1.4;
+		margin-bottom: 2rem;
+	}
+	
+	.contact-item {
+		max-width: 1280px;
+		width: 100%;
+		display: block;
+		grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+		gap: 0px;
+		margin: 0 auto;
+		padding: 0 3.5rem;
 	}
 }

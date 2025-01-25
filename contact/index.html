@@ -5,21 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Jane Huang</title>
     <link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&amp;family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family=Roboto:ital,wght@0,200;0,300;0,400;0,700;1,300;1,400;1,700">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-content">
             <a href="../" class="logo">Jane Huang</a>
-            <div class="nav-links">
-                <a href="../" class="nav-link">Work</a>
-                <a href="../about/" class="nav-link">About</a>
-                <a href="" class="nav-link active">Contact</a>
-            </div>
+			
+			<!-- Mobile menu button -->
+			<button class="mobile-menu-btn" aria-label="Toggle menu">
+				<span class="menu-icon"></span>
+			</button>
+			
+			<!-- Navigation links -->
+			<div class="nav-menu">
+	            <div class="nav-links">
+	                <a href="../" class="nav-link">Work</a>
+	                <a href="../about/" class="nav-link">About</a>
+	                <a href="" class="nav-link active">Contact</a>
+	            </div>
+			</div>
+			
         </div>
     </nav>
 
     <main class="contact">
-        <div class="contact-content">
+        <!--<div class="contact-content">
             <h1>Message<br>me!</h1>
             <p class="contact-intro">Send me a message, opportunity or just a simple Hi.</p>
             
@@ -41,15 +52,55 @@
                         <button type="submit" class="submit-button">Send</button>
                     </form>
                 </div>
-                
-                <div class="contact-social">
-                    <div class="social-links">
-                        <a href="https://linkedin.com" class="social-link">LinkedIn</a>
-                        <a href="mailto:contact@example.com" class="social-link">Email</a>
-                    </div>
-                </div>
             </div>
-        </div>
+        </div>-->
+			
+		<div class="contact-wrap">
+			<div class="contact-item">
+			    <div class="contact-info">
+			    	<h1>Message<br>me!</h1>
+			        <p>Send me a message, opportunity or just a simple Hi.</p>
+	                <div class="social-links-contact">
+	                    <a href="https://www.linkedin.com/in/jie-huang-7a5aa6a7" class="social-link-contact" target="_blank">
+	                        <img src="../img/linkedln-contact.png" alt="LinkedIn" class="social-icon-contact">
+	                    </a>
+	                    <a href="mailto:jiehuang.zero@gmail.com" class="social-link-contact">
+	                        <img src="../img/email-contact.png" alt="Email" class="social-icon-contact">
+	                    </a>
+	                </div>
+			    </div>
+                
+			    <div class="contact-role-info">
+					<div class="contact-project-item">
+						
+						<script src="https://static.elfsight.com/platform/platform.js" async></script>
+						<div class="elfsight-app-63cafa4a-04c5-43d9-9a8c-bb5cc3861c6f" data-elfsight-app-lazy></div>
+						
+			            <!--<div class="contact-grid">
+			                <div class="contact-form-wrapper">
+			                    <form id="contact-form" class="contact-form">
+			                        <div class="form-group">
+			                            <label for="name">Name</label>
+			                            <input type="text" id="name" name="name" required>
+			                        </div>
+			                        <div class="form-group">
+			                            <label for="email">Email</label>
+			                            <input type="email" id="email" name="email" required>
+			                        </div>
+			                        <div class="form-group">
+			                            <label for="message">Message</label>
+			                            <textarea id="message" name="message" required></textarea>
+			                        </div>
+			                        <button type="submit" class="submit-button">Send</button>
+			                    </form>
+			                </div>
+			            </div>-->
+						
+					</div>
+			    </div>
+			</div>
+		</div>
+		
     </main>
 
     <footer class="footer">
