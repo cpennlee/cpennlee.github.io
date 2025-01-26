@@ -994,9 +994,6 @@ main {
 	.experience-item {
 		max-width: 1100px;
 	}
-	.contact {
-		min-height: calc(100vh - 150px);
-	}
 }
 
 
