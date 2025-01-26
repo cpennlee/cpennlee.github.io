@@ -1078,7 +1078,7 @@ main {
 
 @media (max-width: 480px) {
 	.navbar {
-		padding: 0;
+		padding: 1.5rem;
 	}
     main {
         padding: 0;
