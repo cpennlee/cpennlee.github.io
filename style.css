@@ -607,7 +607,7 @@ main {
 }
 
 .social-links img:hover {
-	opacity: 0.8;
+	opacity: 0.6;
 	transition: opacity 0.3s ease;
 }
 
@@ -862,12 +862,21 @@ main {
 }
 
 @media (max-width: 2220px) {
+    main {
+        padding: 13rem 0rem 6rem 0;
+    }
 	.hero-content h1 {
 	    font-size: 5.5rem;
 	}
 	.hero-content p {
 	    font-size: 2rem;
 		margin-bottom: 4rem;
+	}
+	.about-text {
+	    max-width: 800px;
+	    font-size: 1.8rem;
+		line-height: 2;
+		font-weight: 300;
 	}
 
 	.clients p {
@@ -890,12 +899,21 @@ main {
 }
 
 @media (max-width: 1885px) {
+    main {
+        padding: 12rem 0rem 6rem 0;
+    }
 	.hero-content h1 {
 	    font-size: 5rem;
 	}
 	.hero-content p {
 	    font-size: 1.8rem;
 		margin-bottom: 4rem;
+	}
+	.about-text {
+	    max-width: 750px;
+	    font-size: 1.7rem;
+		line-height: 2;
+		font-weight: 300;
 	}
 
 	.clients p {
@@ -912,6 +930,9 @@ main {
 }
 
 @media (max-width: 1716px) {
+    main {
+        padding: 11rem 0rem 6rem 0;
+    }
 	.hero-content h1 {
 	    font-size: 4.5rem;
 	}
@@ -925,9 +946,10 @@ main {
 	    margin-bottom: 1.5rem;
 	}
 	.about-text {
-	    max-width: 800px;
-	    font-size: 1.8rem;
-		line-height: 1.6;
+	    max-width: 700px;
+	    font-size: 1.6rem;
+		line-height: 2;
+		font-weight: 300;
 	}
 	.about-content {
 	    max-width: 1400px;
@@ -938,12 +960,21 @@ main {
 }
 
 @media (max-width: 1550px) {
+    main {
+        padding: 10rem 0rem 6rem 0;
+    }
 	.hero-content h1 {
 	    font-size: 4rem;
 	}
 	.hero-content p {
 	    font-size: 1.4rem;
 		margin-bottom: 4rem;
+	}
+	.about-text {
+	    max-width: 600px;
+	    font-size: 1.5rem;
+		line-height: 1.8;
+		font-weight: 300;
 	}
 
 	.clients p {
@@ -963,12 +994,12 @@ main {
 	.experience-item {
 		max-width: 1300px;
 	}
-	main {
-	    padding: 14rem 0rem 6rem;
-	}
 }
 
 @media (max-width: 768px) {
+    main {
+        padding: 8rem 0rem 6rem 0;
+    }
 	.hero-content {
 	    padding: 2rem;
 	}
@@ -984,7 +1015,7 @@ main {
 	    margin-bottom: 1.5rem;
 	}
 	.about-text {
-	    max-width: 800px;
+	    max-width: 600px;
 	    font-size: 1.6rem;
 		line-height: 1.6;
 	}
