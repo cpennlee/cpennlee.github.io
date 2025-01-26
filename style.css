@@ -1028,7 +1028,7 @@ main {
 		padding: 1.5rem;
 	}
     main {
-        padding: 10rem 0rem 6rem;
+        padding: 8rem 0rem 6rem;
     }
 	.hero-content {
 	    padding: 1.5rem;
@@ -1047,6 +1047,9 @@ main {
 	.client-logos {
 	    gap: 1rem;
 	}
+	.hero-image img {
+		margin-top: 5rem;
+	}
     .hero {
 		padding: 0;
         grid-template-columns: 1fr;
@@ -1055,7 +1058,41 @@ main {
     
     .project-grid {
         grid-template-columns: 1fr;
+		padding:0 1.5rem;
     }
+	
+	.about-text {
+	    font-size: 1.5rem;
+	    line-height: 1.6;
+		padding: 0;
+	}
+	
+	.professional-experience h2 {
+	    font-size: 2rem;
+		padding: 1rem;
+	    margin-bottom: 4rem;
+	}
+	
+	.experience-wrap {
+	    margin-left: 1rem;
+		margin-right: 1rem;
+		margin-bottom: 6rem;
+	}
+
+	.experience-wrap-b {
+	    margin-left: 1rem;
+		margin-right: 1rem;
+		margin-bottom: 3rem;
+	}
+	
+	.experience-item {
+		padding: 0;
+	}
+	
+	.company-info h3 {
+	    font-size: 2rem;
+	    margin-bottom: 1.5rem;
+	}
     
     .contact-grid {
         grid-template-columns: 1fr;
