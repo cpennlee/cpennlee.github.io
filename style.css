@@ -994,14 +994,17 @@ main {
 	.experience-item {
 		max-width: 1200px;
 	}
+	.contact {
+		min-height: calc(100vh - 150px);
+	}
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1300px) {
 	.about-content {
-	    max-width: 1200px;
+	    max-width: 1100px;
 	}
 	.experience-item {
-		max-width: 1200px;
+		max-width: 1100px;
 	}
 	.contact {
 		min-height: calc(100vh - 150px);
