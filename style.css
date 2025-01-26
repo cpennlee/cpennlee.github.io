@@ -1086,18 +1086,39 @@ main {
 	}
 	
 	.experience-item {
-		padding: 0;
+		padding: 0 1rem;
 	}
 	
 	.company-info h3 {
 	    font-size: 2rem;
 	    margin-bottom: 1.5rem;
 	}
+	
+	.project-logos {
+		margin: 1rem 1.5rem;
+	}
+
+	.project-logos h1 {
+	    font-size: 2rem;
+	}
+
+	.project-logos span {
+	    font-size: 1rem;
+	}
+	
+	.project-header h4,
+	.project-header-d h4 {
+	    font-size: 2rem;
+	}
     
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+	
+	.footer {
+	    padding: 1rem;
+	}
     
     /*.contact-content h1 {
         font-size: 3rem;
