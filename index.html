@@ -68,40 +68,7 @@
 
         <div class="project-grid">
             <div class="project">
-				<a href="project/gauthmath/" target="_blank">
-	                <img src="img/p1.jpg" alt="Gauthmath & ByteDance">
-	                <div class="project-overlay">
-	                    <div class="project-logos">
-	                        <h1>Gauthmath</h1>
-	                        <span>Product strategy, Research, UX & UI Design, Design System  (2022)</span>
-	                    </div>
-	                </div>
-				</a>
-            </div>
-            <div class="project">
-				<a href="project/qingbei/" target="_blank">
-	                <img src="img/p2.jpg" alt="Qingbei Online School">
-	                <div class="project-overlay">
-	                    <div class="project-logos">
-	                        <h1>Qingbei Online School</h1>
-	                        <span>Principal User Experience Designer (2020)</span>
-	                    </div>
-	                </div>
-				</a>
-            </div>
-            <div class="project">
-				<a href="project/tobii/" target="_blank">
-	                <img src="img/p3.jpg" alt="Tobii">
-	                <div class="project-overlay">
-	                    <div class="project-logos">
-	                        <h1>Tobii</h1>
-	                        <span>User Researcher (2024)</span>
-	                    </div>
-	                </div>
-				</a>
-            </div>
-            <div class="project">
-				<a href="project/immersive/" target="_blank">
+				<a href="" target="_blank" data-id="immersive">
 	                <img src="img/p4.jpg" alt="Immersive Innovations">
 	                <div class="project-overlay">
 	                    <div class="project-logos">
@@ -112,8 +79,45 @@
 	                </div>
 				</a>
             </div>
+			
             <div class="project">
-				<a href="project/guaguadragon/" target="_blank">
+				<a href="" target="_blank" data-id="tobii">
+	                <img src="img/p3.jpg" alt="Tobii">
+	                <div class="project-overlay">
+	                    <div class="project-logos">
+	                        <h1>Tobii</h1>
+	                        <span>User Researcher (2024)</span>
+	                    </div>
+	                </div>
+				</a>
+            </div>
+			
+            <div class="project">
+				<a href="" target="_blank" data-id="gauthmath">
+	                <img src="img/p1.jpg" alt="Gauthmath & ByteDance">
+	                <div class="project-overlay">
+	                    <div class="project-logos">
+	                        <h1>Gauthmath</h1>
+	                        <span>Product strategy, Research, UX & UI Design, Design System  (2022)</span>
+	                    </div>
+	                </div>
+				</a>
+            </div>
+            <div class="project">
+				<a href="" target="_blank" data-id="qingbei">
+	                <img src="img/p2.jpg" alt="Qingbei Online School">
+	                <div class="project-overlay">
+	                    <div class="project-logos">
+	                        <h1>Qingbei Online School</h1>
+	                        <span>Principal User Experience Designer (2020)</span>
+	                    </div>
+	                </div>
+				</a>
+            </div>
+            
+            
+            <div class="project">
+				<a href="" target="_blank" data-id="guaguadragon">
 	                <img src="img/p5.jpg" alt="Guagua Dragon">
 	                <div class="project-overlay">
 	                    <div class="project-logos">
@@ -124,7 +128,7 @@
 				</a>
             </div>
             <div class="project">
-				<a href="project/xueersi/" target="_blank">
+				<a href="" target="_blank" data-id="xueersi">
 	                <img src="img/p6.jpg" alt="Xueersi App">
 	                <div class="project-overlay">
 	                    <div class="project-logos">
@@ -135,7 +139,7 @@
 				</a>
             </div>
             <div class="project">
-				<a href="project/kewpie/" target="_blank">
+				<a href="" target="_blank" data-id="kewpie">
 	                <img src="img/p7.jpg" alt="Kewpie">
 	                <div class="project-overlay">
 	                    <div class="project-logos">
@@ -157,6 +161,35 @@
             <p>Jane Huang - Copyright 2025</p>
         </div>
     </footer>
+	
+	<script>
+	    const protectedPages = {
+	      immersive: { password: "Janehuang123", url: "project/immersive/" },
+	      tobii: { password: "Janehuang123", url: "project/tobii/" },
+		  gauthmath: { password: "Janehuang123", url: "project/gauthmath/" },
+		  qingbei: { password: "Janehuang123", url: "project/qingbei/" },
+		  guaguadragon: { password: "Janehuang123", url: "project/guaguadragon/" },
+		  xueersi: { password: "Janehuang123", url: "project/xueersi/" },
+	      kewpie: { password: "Janehuang123", url: "project/kewpie/" }
+	    };
+
+	    document.querySelectorAll('.project a').forEach(link => {
+	      link.addEventListener('click', function (e) {
+	        e.preventDefault(); 
+
+	        const id = this.dataset.id;
+	        const page = protectedPages[id];
+	        if (!page) return;
+
+	        const input = prompt("请输入密码查看此作品：");
+	        if (input === page.password) {
+	          window.location.href = page.url;
+	        } else {
+	          alert("密码错误！");
+	        }
+	      });
+	    });
+	  </script>
 
     <script src="script.js"></script>
 </body>
